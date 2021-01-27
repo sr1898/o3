@@ -1,0 +1,123 @@
+{
+	"format_version": 1,
+	"imports": [{
+        "target_table": "order-entry.db::products",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "Products.csv",
+			"has_header": true,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+			"include_filter": [],
+			"import_columns": ["PRODUCTID",
+				"CATEGORYID",
+				"LINEID",
+				"PRODUCTNAME",
+				"PRODUCTDESCRIPTION",
+				"CATEGORYNAME",
+				"CATEGORYDESCRIPTION",
+				"LINENAME",
+				"LINEDESCRIPTION",
+				"DISCONTINUED"
+			]
+		},
+		"column_mappings": {
+			"PRODUCTID": 1,
+			"CATEGORYID": 2,
+			"LINEID": 3,
+			"PRODUCTNAME": 4,
+			"PRODUCTDESCRIPTION": 5,
+			"CATEGORYNAME": 6,
+			"CATEGORYDESCRIPTION": 7,
+			"LINENAME": 8,
+			"LINEDESCRIPTION": 9,
+			"DISCONTINUED": 10
+		}
+	}, {
+		"target_table": "order-entry.db::customers",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "Customers.csv",
+			"has_header": true,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+			"include_filter": [],
+			"import_columns": [
+				"CUSTOMERID",
+				"CITYID",
+				"COUNTRYID",
+				"REGIONID",
+				"CUSTOMER",
+				"CITYNAME",
+				"COUNTRYNAME",
+				"REGIONNAME"
+			]
+		},
+		"column_mappings": {
+			"CUSTOMERID": 1,
+			"CITYID": 2,
+			"COUNTRYID": 3,
+			"REGIONID": 4,
+			"CUSTOMER": 5,
+			"CITYNAME": 6,
+			"COUNTRYNAME": 7,
+			"REGIONNAME": 8
+		}
+	}, {
+		"target_table": "order-entry.db::orders",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "Orders.csv",
+			"has_header": true,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+			"include_filter": [],
+			"import_columns": [
+				"ORDERID",
+				"PRODUCTID",
+				"CUSTOMERID",
+				"EMPLOYEEID",
+				"ORDERPERIODID",
+				"REQUIREDPERIODID",
+				"SHIPPEDPERIODID",
+				"SHIPPERID",
+				"UNITPRICE",
+				"QUANTITY",
+				"DISCOUNT",
+				"UNITSALES",
+				"NETSALES",
+				"UNITCOST",
+				"COST"
+			]
+		},
+		"column_mappings": {
+			"ORDERID": 1,
+			"PRODUCTID": 2,
+			"CUSTOMERID": 3,
+			"EMPLOYEEID": 4,
+			"ORDERPERIODID": 5,
+			"REQUIREDPERIODID": 6,
+			"SHIPPEDPERIODID": 7,
+			"SHIPPERID": 8,
+			"UNITPRICE": 9,
+			"QUANTITY": 10,
+			"DISCOUNT": 11,
+			"UNITSALES": 12,
+			"NETSALES": 13,
+			"UNITCOST": 14,
+			"COST": 15
+		}
+	}]
+}

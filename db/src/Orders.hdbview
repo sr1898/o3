@@ -1,0 +1,1 @@
+VIEW "order-entry.db::view" as select * from "order-entry.db::orders";

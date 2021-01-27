@@ -1,0 +1,7 @@
+service {
+	"order-entry.db::customers"	as "customers"	navigates ("CustomerOrders" as "TheirOrders") ;
+	"order-entry.db::view"		as "Orders"		key ("ORDERID","PRODUCTID") 	navigates ("ToCustomer" as "TheCustomer");
+
+	association "CustomerOrders" with referential constraint principal "customers"("CUSTOMERID") multiplicity "1" dependent "Orders"("CUSTOMERID") multiplicity "*";
+	association "ToCustomer" with referential constraint principal "Orders"("CUSTOMERID") multiplicity "*" dependent "customers"("CUSTOMERID") multiplicity "1";
+}

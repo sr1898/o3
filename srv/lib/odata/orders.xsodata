@@ -1,0 +1,3 @@
+ service {
+	 "order-entry.db::view" as "Orders" key ("ORDERID"); 
+}  
